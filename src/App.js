@@ -1,9 +1,15 @@
 import { Routes, Route } from 'react-router-dom'; 
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import HomePage from './routes/HomePage';
-import ContactUs from './routes/ContactUs';
+import DirectoriesPage from './routes/DirectoriesPage.js';
+import DirectoriePage from './routes/DirectoriePage.js';
+
+
+
+// import ContactUs from './routes/ContactUs';
 
 export default function App() {
   return (
@@ -11,8 +17,12 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/:courseID" element={<DirectoriesPage />} />
+        <Route path="/:courseID/:directorieID" element={<DirectoriePage />} />
+
+        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
